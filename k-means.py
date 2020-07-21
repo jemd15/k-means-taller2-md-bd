@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 # Constant
-DATASET1 = "./cars.csv"
+CARS_DATASET = "./cars.csv"
 LOOPS = 20
 MAX_ITERATIONS = 10
 INITIALIZE_CLUSTERS = 'k-means++'
@@ -13,7 +13,7 @@ NUM_THREADS = 8
 
 def dataset_to_list_points(dir_dataset):
     """
-    Read a txt file with a set of points and return a list of objects Point
+    Read THE .csv dataset with a set of points and return a list of objects Point
     :param dir_dataset:
     """
     points = list()
@@ -51,7 +51,7 @@ def select_clusters(dataset, loops, max_iterations, init_cluster, tolerance, num
     labels=kmeans.predict(points)
     centroids=kmeans.cluster_centers_
     
-    colors=["m.","r.","c.","y.","b."]
+    colors=["c.","y.","b.","m.","r."]
     
     for i in range(len(points)):
         print("Coordenada: ",points[i]," Label: ",labels[i])
@@ -61,4 +61,4 @@ def select_clusters(dataset, loops, max_iterations, init_cluster, tolerance, num
     plt.show()
     
 
-select_clusters(DATASET1, LOOPS, MAX_ITERATIONS, INITIALIZE_CLUSTERS, CONVERGENCE_TOLERANCE, NUM_THREADS)
+select_clusters(CARS_DATASET, LOOPS, MAX_ITERATIONS, INITIALIZE_CLUSTERS, CONVERGENCE_TOLERANCE, NUM_THREADS)

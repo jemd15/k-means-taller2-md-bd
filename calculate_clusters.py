@@ -43,8 +43,7 @@ def select_clusters(dataset, loops, max_iterations, init_cluster, tolerance, num
 
     for i in range(1, loops + 1, 1):
         # Object KMeans
-        kmeans = KMeans(n_clusters=i, max_iter=max_iterations,
-                        init=init_cluster, tol=tolerance, n_jobs=num_threads)
+        kmeans = KMeans(n_clusters=i, max_iter=max_iterations, init=init_cluster, tol=tolerance, n_jobs=num_threads)
 
         # Calculate Kmeans
         kmeans.fit(points)
